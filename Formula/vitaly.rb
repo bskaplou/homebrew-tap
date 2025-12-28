@@ -1,15 +1,15 @@
 class Vitaly < Formula
   desc "VIA/Vial API client and cli tool for guiless keyboard configuration."
   homepage "https://github.com/bskaplou/vitaly"
-  version "0.1.18"
+  version "0.1.19"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.18/vitaly-aarch64-apple-darwin.tar.xz"
-      sha256 "7e27877aa5f05f3faae7c0237c6d7feff8de0cc28659ff09955f0422b20b0a2a"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.19/vitaly-aarch64-apple-darwin.tar.xz"
+      sha256 "24e69af8f83ef47a64b9b1d5b7695befc2f32076664c749b83cf9b99aace667e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.18/vitaly-x86_64-apple-darwin.tar.xz"
-      sha256 "dd370066b6d2d73aa2a365a95230f31910bee00b21ad4125821a8a9f0f78ae20"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.19/vitaly-x86_64-apple-darwin.tar.xz"
+      sha256 "6790931f872e028bf6a761c48a8c0c88f549f329916246c76ff4b2166d497a96"
     end
   end
   license "MIT"

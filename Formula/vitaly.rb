@@ -1,22 +1,23 @@
 class Vitaly < Formula
   desc "VIA/Vial API client and cli tool for guiless keyboard configuration."
   homepage "https://github.com/bskaplou/vitaly"
-  version "0.1.23"
+  version "0.1.24"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.23/vitaly-aarch64-apple-darwin.tar.xz"
-      sha256 "f5c032f2f93ca38eb445f4c8540faaa4b1a154c886e1ad128acc568ab9c83218"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.24/vitaly-aarch64-apple-darwin.tar.xz"
+      sha256 "e53c6b3815cf71e935033ae719ed97afbde9c9fd6a42cb19afc94b7fd64803e6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.23/vitaly-x86_64-apple-darwin.tar.xz"
-      sha256 "dc0f1347a29d32927f2dd29fd47b97fc2f3596658831d72fe2a90509efb24372"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.24/vitaly-x86_64-apple-darwin.tar.xz"
+      sha256 "5bf4a081fe1f7d39f894e912c3eedd05eb47a1f90352fef9921fcf3b5407427b"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin":  {},
+    "aarch64-apple-darwin":  {},
+    "x86_64-apple-darwin":   {},
+    "x86_64-pc-windows-gnu": {},
   }.freeze
 
   def target_triple

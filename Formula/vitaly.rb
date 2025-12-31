@@ -1,28 +1,35 @@
 class Vitaly < Formula
   desc "VIA/Vial API client and cli tool for guiless keyboard configuration."
   homepage "https://github.com/bskaplou/vitaly"
-  version "0.1.25"
+  version "0.1.26"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.25/vitaly-aarch64-apple-darwin.tar.xz"
-      sha256 "2d46c9aca247f0f8cfdfc71b0b2d00519be128a05413d26d7cf0241b4d7bc4f9"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.26/vitaly-aarch64-apple-darwin.tar.xz"
+      sha256 "bb2a30c3cea0643928dbcfecb9a78004fe60919912441efa940fe02fe52e4deb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.25/vitaly-x86_64-apple-darwin.tar.xz"
-      sha256 "c3bd3b817fdfd40cfba8c78bcaf77ddca5bd45465c9e088709416a6caec72232"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.26/vitaly-x86_64-apple-darwin.tar.xz"
+      sha256 "1b99c2b2e5455df6d78d21845782d950a0b1a15b37c0c286707c3f45e9279432"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bskaplou/vitaly/releases/download/v0.1.25/vitaly-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "839ad8a172988d584e2391cb3a9c88943bf400df251c7dc9d7488a5888162a6c"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.26/vitaly-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9188feb2bb912f42089f887fde8435a3c3d89f2747799706b2a65d82d592cc54"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.26/vitaly-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "df3c67e1f2d0e6d73c00409837fc09f49b1725f26c88112517e1c49e905bcf19"
+    end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-pc-windows-gnu":    {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -43,6 +50,7 @@ class Vitaly < Formula
   def install
     bin.install "vitaly" if OS.mac? && Hardware::CPU.arm?
     bin.install "vitaly" if OS.mac? && Hardware::CPU.intel?
+    bin.install "vitaly" if OS.linux? && Hardware::CPU.arm?
     bin.install "vitaly" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!

@@ -1,25 +1,25 @@
 class Vitaly < Formula
   desc "VIA/Vial API client and cli tool for guiless keyboard configuration."
   homepage "https://github.com/bskaplou/vitaly"
-  version "0.1.27"
+  version "0.1.28"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.27/vitaly-aarch64-apple-darwin.tar.xz"
-      sha256 "fb5e8e6f34dd8b357fb4751e5027942083fb45b4781c6ec57f08170d4dab3e91"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.28/vitaly-aarch64-apple-darwin.tar.xz"
+      sha256 "579b7cb2425432778f778306d02a31c11c44f7ced4f50d445df6530690d2ae63"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.27/vitaly-x86_64-apple-darwin.tar.xz"
-      sha256 "718c924ef05925d7ec8ffe6b13d5be49532909dc8721efd7a0422d5e43bd6d38"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.28/vitaly-x86_64-apple-darwin.tar.xz"
+      sha256 "7350249cde94ed33f1bbca48e3797570023cd41123d4b2392a8958c1746324e5"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.27/vitaly-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f9d5fbc4bc49ad902e79e173730dc5407f89caa1ee3ef4966ce0e2780a053083"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.28/vitaly-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b72018f431bb1eb4f06d61d39f8c408a358b65cbfbf3c07dde57ca0279101605"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.27/vitaly-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d585de428463eb2cdce8109b47169b78fd3118ba1b8d3edc93d23854a0d97769"
+      url "https://github.com/bskaplou/vitaly/releases/download/v0.1.28/vitaly-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7c6fa1204cd2e5cffc26279104f6105bec17c4d5df31b28627d8d7ba54fbb8ea"
     end
   end
   license "MIT"
